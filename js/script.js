@@ -12,6 +12,7 @@ const submitLogin = document.querySelector('#submitLogin');
 const userName = document.querySelector('#userName');
 const nameErrorSignUp = document.querySelector('#nameErrorSignUp');
 const passwordErrorLogin = document.querySelector('#passwordErrorLogin');
+const loginError = document.querySelector('#loginError');
 
 // const userName = localStorage.getItem('loggedInUser');
 
@@ -68,26 +69,37 @@ function clearAllUsers() {
 }
 
 // Make sure to call this when needed
-document.getElementById('clearUsersBtn').addEventListener('click', clearAllUsers);
+// document.getElementById('clearUsersBtn').addEventListener('click', clearAllUsers);
 
 
 // submit login form
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    loadFromLocalStorage(); 
-    const loginEmail = inputEmailLogin.value.trim().toLowerCase();
-    const loginPassword = inputPasswordLogin.value.trim();
+    event.preventDefault(); 
 
+    loadFromLocalStorage(); 
+
+    const loginEmail = inputEmailLogin.value.trim().toLowerCase(); 
+    const loginPassword = inputPasswordLogin.value.trim(); 
+
+    const userExists = dataArray.some(data => data.email.toLowerCase() === loginEmail);
+
+    if (!userExists) {
+        loginError.classList.remove("d-none"); 
+        loginError.textContent = "This email is not registered. Please sign up first.";
+        console.log("Login failed: Email not registered.");
+        return;
+    }
 
     const user = dataArray.find(data => data.email.toLowerCase() === loginEmail && data.password === loginPassword);
 
     if (user) {
         console.log("Login successful", user);
-        localStorage.setItem('loggedInUser', user.name);
-        window.location.href = 'home-page.html';
+        localStorage.setItem('loggedInUser', user.name); 
+        window.location.href = 'home-page.html'; 
     } else {
-        passwordErrorLogin.classList.remove("d-none");
+        passwordErrorLogin.classList.remove("d-none"); 
+        passwordErrorLogin.textContent = "Invalid password. Please try again.";
         console.log("Login failed: Invalid email or password.");
     }
 
