@@ -1,0 +1,142 @@
+/****** Start Global syles ******/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+
+
+/****** End Global syles ******/
+
+
+
+/****** Start Login ******/
+.container {
+    width: auto;
+    height: 100vh;
+}
+
+.login, 
+.register{
+    padding: 4rem 8rem;
+    background: linear-gradient(to bottom right,
+            rgb(93, 100, 197),
+            rgb(133, 34, 136));
+    border-radius: 25px;
+    opacity: 0.9;
+    box-shadow: 5px 5px 15px #00ffff, -5px -5px 15px #00ffff;
+}
+
+.login  h1 ,
+.register  h1 {
+    font-size: 40px;
+    margin-bottom: 2rem;
+    padding: 5px 0;
+    text-shadow: 1px 1px 2px rgb(0, 255, 255), 0 0 1em rgb(0, 255, 255),
+        0 0 0.2em rgb(0, 255, 255);
+}
+
+.login  .email,.password,.name,
+.register .email,.password, .name{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 2px solid #00ffff;
+}
+
+
+.login  .email input, .password input, .name input,
+.register  .email input, .password input, .name input{
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 10px;
+}
+
+.login .email input::placeholder, .password input::placeholder , .name input::placeholder,
+.register .email input::placeholder, .password input::placeholder , .name input::placeholder{
+    color: #fff;
+}
+
+
+.login .btn,
+.register .btn{
+    width: 100%;
+    background: none;
+    border: 2px solid #00ffff;
+    color: #fff;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.login .btn:hover,
+.register .btn:hover{
+    border: 2px solid #00ffff;
+}
+
+.login  p>a ,
+.register  p>a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.login p>a:hover ,
+.register p>a:hover {
+    color: #00ffff;
+}
+
+
+
+@media (max-width: 425px) {
+    .login , 
+    .register {
+        padding: 8rem 2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .login , 
+    .register {
+        padding: 8rem 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .login , 
+    .register {
+        padding: 8rem 1rem;
+        width: 70%;
+    }
+}
+
+/****** End Login ******/
+
+
+/****** Start home page ******/
+.user{
+    position: relative;
+    top: 3rem;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: cursive;
+}
+/****** End home page ******/

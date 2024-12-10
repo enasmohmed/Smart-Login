@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <!-- =========== START CORE FONT ============= -->
+    <!-- ===== favicon ===== -->
+    <link rel="icon" href="./images/bookmark.png" />
+    <!-- =========== END CORE FONT ============= -->
+
+    <!-- ========== START FONTAWESOMS LIBRAIRY ========= -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- ========== END FONTAWESOMS LIBRAIRY ========= -->
+
+    <!-- ========= START BOOTSTRAP CSS ========= -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- ========= END BOOTSTRAP CSS ========= -->
+
+    <!-- ========== START MAIN CSS ========= -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- ========== END MAIN CSS ========= -->
+</head>
+
+<body>
+
+
+    <!--& ========== Start Login =========== -->
+    <div class="container d-flex justify-content-center align-items-center">
+
+
+        <form id="registerForm" class="d-none">
+            <div id="registerPage" class="register">
+                    <h1>Smart Register System</h1>
+                    <div class="name">
+                        <input id="inputNameRegister" type="text" placeholder="Enter Your Name" required>
+                    </div>
+
+                    <div class="email">
+                        <input id="inputEmailRegister" type="email" placeholder="Enter Your Email" required autocomplete="email">
+                    </div>
+
+                    <div class="password">
+                        <input id="inputPasswordRegister" type="password" placeholder="Enter Your Password" required autocomplete="new-password">
+                    </div>
+
+                    <div id="submitError" class="alert alert-danger d-none">
+                        Please Enter Required.
+                    </div>
+
+                    <div id="nameErrorSignUp" class="alert alert-danger d-none">
+                        This Email already exists. Please choose a different Email.
+                    </div>
+                    <div id="passwordErrorLogin" class="alert alert-danger d-none">
+                        Login failed: Invalid email or password.
+                    </div>
+                    <p id="registerSuccess" class="text-bg-success text-white fw-bolder fs-3  d-none my-3 text-center ">Registration successful!</p>
+                    <button id="submitRegister"  type="submit" class="btn">Register</button>
+                    <button id="clearUsersBtn">Clear All Users</button>
+
+                    <p class="text-center mt-2">Don’t have an account? <a onclick="changeFormData()" href="javascript:void(0)">Login</a></p>
+                
+            </div>
+        </form>  
+
+
+        <form id="loginForm" class="">
+            <div id="loginPage" class="login">
+            
+                <h1>Smart Login System</h1>
+                <div class="email">
+                    <input id="inputEmailLogin" type="email" placeholder="Enter Your Email" required autocomplete="email">
+                </div>
+                <div class="password">
+                    <input id="inputPasswordLogin" type="password" placeholder="Enter Your Password" required autocomplete="new-password">
+                </div>
+                <button id="submitLogin" type="submit" class="btn">Login</button>
+                <p class="text-center mt-2">Don’t have an account? <a onclick="changeFormData()" href="javascript:void(0)">Sign Up</a></p>
+            
+            </div>
+        </form>
+        
+
+    </div>
+
+
+    <!--& ========== End Login =========== -->
+
+
+    <!-- ========= Start BOOTSTRAP JS ========== -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- ========= END BOOTSTRAP JS ========== -->
+
+    <!-- ======== Start MAIN JS ========= -->
+    <script src="./js/script.js"></script>
+    <!-- ======== End MAIN JS ========= -->
+
+</body>
+
+</html>
